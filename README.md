@@ -6,8 +6,7 @@ Mikrotik Template Login for [PHPMIXBILL](https://github.com/ibnux/phpmixbill)
 This Template is for Mikrotik Login Hotspot, just put all File inside hotspot folder in Mikrotik, overwrite all. You need to have [PHPMIXBILL](https://github.com/ibnux/phpmixbill) installed somewhere.
 
 You need to edit this file, find **TODO**, and follow instruction:
- 
- - billing.js
+
  - login.html
  - status.html
  - logout.html
@@ -17,14 +16,13 @@ You need to edit this file, find **TODO**, and follow instruction:
 
  Delete folder remove!
 
- 
+
 **.:Indonesia:.**
 
 Template ini untuk Login Hotspot Mikrotik, upload dan timpa semua file ke folder hotspot, pastikan anda juga telah memasang [PHPMIXBILL](https://github.com/ibnux/phpmixbill) di suatu server.
 
 Sebelum digunakan edit dulu file dibawah, Cari **TODO** dan ikuti petunjuknya:
- 
- - billing.js
+
  - login.html
  - status.html
  - logout.html
@@ -33,7 +31,7 @@ Sebelum digunakan edit dulu file dibawah, Cari **TODO** dan ikuti petunjuknya:
  Ganti **background.jpg** dengan Background anda sendiri
 
  hapus folder remove!
- 
+
 DONT FORGET!! JANGAN LUPA!!!
 ----
 Add your phpmixbill server IP or domain to walled garden hotspot
@@ -49,6 +47,6 @@ Explanation | Penjelasan
 
 CREDITS
 ----
-Masjid Agung Banten Wallpaper taken from [www.bantenwisata.com](http://www.bantenwisata.com/2015/09/masjid-agung-banten.html) 
+Masjid Agung Banten Wallpaper taken from [www.bantenwisata.com](http://www.bantenwisata.com/2015/09/masjid-agung-banten.html)
 
 Template created using [Bootstrap v3.3.7](http://getbootstrap.com)

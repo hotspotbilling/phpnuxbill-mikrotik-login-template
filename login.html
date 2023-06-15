@@ -9,8 +9,8 @@
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <style type="text/css">
-body { 
-  background: url(background.jpg) no-repeat center center fixed; 
+body {
+  background: url(background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -48,7 +48,7 @@ $(endif)
 					$(if chap-id) onSubmit="return doLogin()" $(endif)>
 					<input type="hidden" name="dst" value="$(link-orig)" />
 					<input type="hidden" name="popup" value="true" />
-					
+
 						<table class="table" width="100" style="background-color: #ffffff">
 							<tr><td align="right">Username</td>
 									<td><input class="form-control" name="username" type="text" value="$(username)"/></td>
@@ -57,10 +57,10 @@ $(endif)
 									<td><input class="form-control" name="password" type="password"/></td>
 							</tr>
 							<!-- TODO:
-							*	Change url to your phpmixbill url, to login page
-							*	Ganti url ke alamat server phpmixbill, ke halaman login
+							*	Change url to your phpmixbill url, to login page, dont remove ?mac=$(mac-esc)&ip=$(ip)
+							*	Ganti url ke alamat server phpmixbill, ke halaman login, jangan hapus ?mac=$(mac-esc)&ip=$(ip)
 							-->
-							<tr><td><a href="http://billing.ibnux.com/" class="btn btn-block btn-success">Register<a></td>
+							<tr><td><a href="http://billing.ibnux.com/?nux-mac=$(mac-esc)&nux-ip=$(ip)" class="btn btn-block btn-success">Register<a></td>
 									<td><input type="submit" class="btn btn-block btn-primary" value="ENTER" /></td>
 							</tr>
 						</table>
@@ -77,7 +77,11 @@ $(endif)
 				<div class="panel-heading">
 					<h3 class="panel-title">Information</h3>
 				</div>
-				<div class="panel-body" id="Announcement"></div>
+                <!-- TODO:
+                *	Change url to your phpmixbill url, to login page
+                *	Ganti url ke alamat server phpmixbill, ke halaman login
+                -->
+				<iframe src="http://nuxbill.nux.my.id/pages/Announcement.html" width="100%" frameBorder="0" name="information" title="Information" class="panel-body" id="information"></iframe>
 			</div>
 		</div>
 		<div class="col-md-4">
@@ -85,7 +89,11 @@ $(endif)
 				<div class="panel-heading">
 					<h3 class="panel-title">Voucher Info</h3>
 				</div>
-				<div class="panel-body" id="voucherInformation"></div>
+                <!-- TODO:
+                *	Change url to your phpmixbill url, to login page
+                *	Ganti url ke alamat server phpmixbill, ke halaman login
+                -->
+				<iframe src="http://nuxbill.nux.my.id/pages/Order_Voucher.html" width="100%" frameBorder="0" name="voucher_information" title="Voucher information" class="panel-body" id="voucher_information"></iframe>
 			</div>
 		</div>
 	</div>
@@ -98,7 +106,7 @@ $(if chap-id)
 		<input type="hidden" name="dst" value="$(link-orig)" />
 		<input type="hidden" name="popup" value="true" />
 	</form>
-	
+
 	<script type="text/javascript" src="md5.js"></script>
 	<script type="text/javascript">
 	<!--
@@ -109,6 +117,19 @@ $(if chap-id)
 		return false;
 	    }
 	//-->
+
+    // Selecting the iframe element
+    var iframe = document.getElementById("information");
+    // Adjusting the iframe height onload event
+    iframe.onload = function(){
+        iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+    }
+    // Selecting the iframe element
+    var iframe2 = document.getElementById("voucher_information");
+    // Adjusting the iframe height onload event
+    iframe2.onload = function(){
+        iframe2.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+    }
 	</script>
 $(endif)
 <script src="jquery-3.2.0.slim.min.js"></script>
