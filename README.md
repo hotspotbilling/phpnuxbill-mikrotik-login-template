@@ -1,9 +1,9 @@
-Mikrotik Template Login for [PHPMIXBILL](https://github.com/ibnux/phpmixbill)
+Mikrotik Template Login for [PHPNuxBill](https://github.com/hotspotbilling/phpnuxbill)
 ----
 
 **.:English:.**
 
-This Template is for Mikrotik Login Hotspot, just put all File inside hotspot folder in Mikrotik, overwrite all. You need to have [PHPMIXBILL](https://github.com/ibnux/phpmixbill) installed somewhere.
+This Template is for Mikrotik Login Hotspot, just put all File inside hotspot folder in Mikrotik, overwrite all. You need to have [PHPNuxBill](https://github.com/hotspotbilling/phpnuxbill) installed somewhere.
 
 You need to edit this file, find **TODO**, and follow instruction:
 
@@ -19,7 +19,7 @@ You need to edit this file, find **TODO**, and follow instruction:
 
 **.:Indonesia:.**
 
-Template ini untuk Login Hotspot Mikrotik, upload dan timpa semua file ke folder hotspot, pastikan anda juga telah memasang [PHPMIXBILL](https://github.com/ibnux/phpmixbill) di suatu server.
+Template ini untuk Login Hotspot Mikrotik, upload dan timpa semua file ke folder hotspot, pastikan anda juga telah memasang [PHPNuxBill](https://github.com/hotspotbilling/phpnuxbill) di suatu server.
 
 Sebelum digunakan edit dulu file dibawah, Cari **TODO** dan ikuti petunjuknya:
 
@@ -34,16 +34,16 @@ Sebelum digunakan edit dulu file dibawah, Cari **TODO** dan ikuti petunjuknya:
 
 DONT FORGET!! JANGAN LUPA!!!
 ----
-Add your phpmixbill server IP or domain to walled garden hotspot
+Add your PHPNuxBill server IP or domain to walled garden hotspot
 
-Tambahkan alamat IP atau domain Phpmixbill server ke walled garden hotspot
+Tambahkan alamat IP atau domain PHPNuxBill server ke walled garden hotspot
 
 
 
 Explanation | Penjelasan
 ----
 
-![MacDown logo](remove/info.png)
+![Static Pages](remove_me/info.png)
 
 CREDITS
 ----

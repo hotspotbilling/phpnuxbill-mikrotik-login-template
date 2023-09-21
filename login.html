@@ -58,9 +58,11 @@ $(endif)
 							</tr>
 							<!-- TODO:
 							*	Change url to your phpmixbill url, to login page, dont remove ?mac=$(mac-esc)&ip=$(ip)
+                            *   Change nux-router= with Router ID, if router ID 2 then change to nux-router=2
 							*	Ganti url ke alamat server phpmixbill, ke halaman login, jangan hapus ?mac=$(mac-esc)&ip=$(ip)
+                            *   Ganti nux-router= dengan ID router, jika ID nya 2 maka jadi nux-router=2
 							-->
-							<tr><td><a href="http://billing.ibnux.com/?nux-mac=$(mac-esc)&nux-ip=$(ip)" class="btn btn-block btn-success">Register<a></td>
+							<tr><td><a href="http://billing.ibnux.com/?nux-mac=$(mac-esc)&nux-ip=$(ip)&nux-router=" class="btn btn-block btn-success">Register<a></td>
 									<td><input type="submit" class="btn btn-block btn-primary" value="ENTER" /></td>
 							</tr>
 						</table>
@@ -132,7 +134,5 @@ $(if chap-id)
     }
 	</script>
 $(endif)
-<script src="jquery-3.2.0.slim.min.js"></script>
-<script src="billing.js"></script>
 </body>
 </html>
