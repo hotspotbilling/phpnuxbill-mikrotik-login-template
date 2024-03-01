@@ -1,14 +1,17 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>Status - Internet Hotspot</title>
 $(if refresh-timeout)
 <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
 $(endif)
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="expires" content="-1">
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<style type="text/css">
+<style>
 body {
   background: url(background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -16,9 +19,33 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
+
+.card-header {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.card-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.5rem;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
 </style>
-<script language="JavaScript">
-<!--
+<script>
 $(if advert-pending == 'yes')
     var popup = '';
     function focusAdvert() {
@@ -35,99 +62,76 @@ $(endif)
 	window.close();
 	return false;
     }
-//-->
 </script>
 </head>
-<body bottommargin="0" topmargin="0" leftmargin="0" rightmargin="0"
-$(if advert-pending == 'yes')
-	onLoad="openAdvert()"
-$(endif)
->
-
-<div class="page-header" align="center">
-	<!-- TODO:
-	*	Change To fit your Hotspot name
-	*	Ganti ke nama Hotspot anda
-	-->
-  <h1 style="color:#323131;text-shadow: 2px 2px 4px #FFFFFF;">iBNuX Hotspot<br />
-	<small>Wireless Internet</small></h1>
-</div>
-
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-4">
-			<div class="panel panel-primary">
-				$(if login-by == 'trial')
-					<div class="panel-heading">
-						<h3 class="panel-title">Welcome trial user!</h3>
-					</div>
-				$(elif login-by != 'mac')
-					<div class="panel-heading">
-						<h3 class="panel-title">Welcome $(username)!</h3>
-					</div>
-				$(else)
-					<div class="panel-heading">
-						<h3 class="panel-title">Welcome!</h3>
-					</div>
-				$(endif)
-				<table border="1" class="table">
-					<tr><td align="right">IP address:</td><td>$(ip)</td></tr>
-					<tr><td align="right">bytes up/down:</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
-				$(if session-time-left)
-					<tr><td align="right">connected / left:</td><td>$(uptime) / $(session-time-left)</td></tr>
-				$(else)
-					<tr><td align="right">connected:</td><td>$(uptime)</td></tr>
-				$(endif)
-				$(if blocked == 'yes')
-					<tr><td align="right">status:</td><td><div style="color: #FF8080">
-				<a href="$(link-advert)" target="hotspot_advert">advertisement</a> required</div></td>
-				$(elif refresh-timeout)
-					<tr><td align="right">status refresh:</td><td>$(refresh-timeout)</td>
-				$(endif)
-
-				</table>
-				$(if login-by-mac != 'yes')
-				<div class="panel-footer">
-					<!-- TODO:
-					*	Change url to your phpmixbill url, to login page
-					*	Ganti url ke alamat server phpmixbill, ke halaman login
-					-->
-					<a href="http://billing.ibnux.com" class="btn btn-block btn-primary" target="_blank">Billing/Voucher Info</a>
-				</div>
-				<div class="panel-footer">
-					<form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
-						<input type="hidden" name="erase-cookie" value="on">
-						<input type="submit" class="btn btn-block btn-danger" value="Log Off">
-					</form>
-				</div>
-				$(endif)
-			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<h3 class="panel-title">Information</h3>
-				</div>
-                <!-- TODO:
-                *	Change url to your phpmixbill url, to login page
-                *	Ganti url ke alamat server phpmixbill, ke halaman login
-                -->
-				<iframe src="http://nuxbill.nux.my.id/pages/Announcement.html" width="100%" frameBorder="0" name="information" title="Information" class="panel-body" id="information"></iframe>
-			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<h3 class="panel-title">Voucher Info</h3>
-				</div>
-                <!-- TODO:
-                *	Change url to your phpmixbill url, to login page
-                *	Ganti url ke alamat server phpmixbill, ke halaman login
-                -->
-				<iframe src="http://nuxbill.nux.my.id/pages/Order_Voucher.html" width="100%" frameBorder="0" name="voucher_information" title="Voucher information" class="panel-body" id="voucher_information"></iframe>
-			</div>
-		</div>
-	</div>
+<body onload="$(if advert-pending == 'yes') openAdvert(); $(endif)">
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-12 text-center mb-5">
+      <h1 class="display-4" style="color:#323131;text-shadow: 2px 2px 4px #FFFFFF;">iBNuX Hotspot<br />
+    <small>Wireless Internet</small></h1>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        $(if login-by == 'trial')
+          <div class="card-header">
+            <h3 class="card-title">Welcome trial user!</h3>
+          </div>
+        $(elif login-by != 'mac')
+          <div class="card-header">
+            <h3 class="card-title">Welcome $(username)!</h3>
+          </div>
+        $(else)
+          <div class="card-header">
+            <h3 class="card-title">Welcome!</h3>
+          </div>
+        $(endif)
+        <div class="card-body">
+          <table class="table">
+            <tr><td align="right">IP address:</td><td>$(ip)</td></tr>
+            <tr><td align="right">bytes up/down:</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
+            $(if session-time-left)
+              <tr><td align="right">connected / left:</td><td>$(uptime) / $(session-time-left)</td></tr>
+            $(else)
+              <tr><td align="right">connected:</td><td>$(uptime)</td></tr>
+            $(endif)
+            $(if blocked == 'yes')
+              <tr><td align="right">status:</td><td><div style="color: #FF8080"><a href="$(link-advert)" target="hotspot_advert">advertisement</a> required</div></td>
+            $(elif refresh-timeout)
+              <tr><td align="right">status refresh:</td><td>$(refresh-timeout)</td>
+            $(endif)
+          </table>
+        </div>
+        $(if login-by-mac != 'yes')
+        <div class="card-footer">
+          <a href="http://billing.ibnux.com" class="btn btn-primary btn-block" target="_blank">Billing/Voucher Info</a>
+        </div>
+        <div class="card-footer">
+          <form action="$(link-logout)" name="logout" onsubmit="return openLogout()">
+            <input type="hidden" name="erase-cookie" value="on">
+            <input type="submit" class="btn btn-danger btn-block" value="Log Off">
+          </form>
+        </div>
+        $(endif)
+      </div>
+    </div>
+    <div class="col-md-4 mt-3">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Information</h3>
+        </div>
+        <iframe src="http://nuxbill.nux.my.id/pages/Announcement.html" width="100%" frameborder="0" name="information" title="Information" class="card-body" id="information"></iframe>
+      </div>
+    </div>
+    <div class="col-md-4 mt-3">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Voucher Info</h3>
+        </div>
+        <iframe src="http://nuxbill.nux.my.id/pages/Order_Voucher.html" width="100%" frameborder="0" name="voucher_information" title="Voucher information" class="card-body" id="voucher_information"></iframe>
+      </div>
+    </div>
+  </div>
 </div>
 </body>
 </html>
